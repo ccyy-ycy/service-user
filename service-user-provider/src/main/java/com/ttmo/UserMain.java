@@ -6,10 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 主启动类
+ * <br/>
+ * PS：这个项目顺便学一下MP了
  * @author yangqiaoxin
  * @date 2021/02/07
  */
-@MapperScan
 @SpringBootApplication
 public class UserMain {
     public static void main(String[] args) {

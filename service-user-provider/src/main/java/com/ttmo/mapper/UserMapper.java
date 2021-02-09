@@ -17,5 +17,5 @@ public interface UserMapper {
         修改用户信息
         注销用户
      */
-    List<User> listUsers();
+
 }
