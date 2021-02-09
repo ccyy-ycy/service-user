@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @ConditionalOnClass(MybatisPlusAutoConfiguration.class)
 @Configuration
-@MapperScan(basePackages = "com.ttmo.mapper")
+@MapperScan(value = "com.ttmo.mapper")
 public class MybatisPlusConfig {
 
     @Bean

@@ -24,6 +24,7 @@
         <alibaba.druid.version>1.2.4</alibaba.druid.version>
         <mybatis.plus.version>3.4.2</mybatis.plus.version>
         <spring.boot.version>2.4.2</spring.boot.version>
+        <hutool.version>5.5.8</hutool.version>
     </properties>
 
     <dependencyManagement>
@@ -52,6 +53,12 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${alibaba.druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
             </dependency>
 
         </dependencies>
