@@ -1,9 +1,5 @@
 package com.ttmo.mapper;
 
-import com.ttmo.domain.User;
-
-import java.util.List;
-
 /**
  * 用户访问
  * @author yangqiaoxin
