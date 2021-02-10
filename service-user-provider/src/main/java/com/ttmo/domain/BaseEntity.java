@@ -20,22 +20,22 @@ public abstract class BaseEntity implements Serializable {
      * 编号
      */
     @TableId(value = "id", type = IdType.AUTO)
-    Long id;
+    protected Long id;
 
     /**
      * 创建时间
      */
-    Date createTime;
+    protected Date createTime;
 
     /**
      * 更新时间
      */
-    Date updateTime;
+    protected Date updateTime;
 
     /**
      * 是否已删除
      */
     @TableField(value = "is_deleted")
-    Boolean deleted;
+    protected Boolean deleted;
 
 }

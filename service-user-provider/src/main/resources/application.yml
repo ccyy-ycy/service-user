@@ -20,6 +20,7 @@ mybatis-plus:
       logic-delete-field: deleted
       logic-delete-value: true
       logic-not-delete-value: false
+  type-enums-package: com.ttmo.domain.enumerate
 logging:
   level:
     com.ttmo.**: debug

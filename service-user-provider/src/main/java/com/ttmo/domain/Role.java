@@ -1,6 +1,8 @@
 package com.ttmo.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 /**
  * 角色
@@ -8,13 +10,10 @@ import lombok.Data;
  * @author yangqiaoxin
  * @date 2021/02/07
  */
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class Role extends BaseEntity {
-
-    /**
-     * 角色名称
-     */
-    private String name;
 
     /**
      * 用户编号
