@@ -1,5 +1,7 @@
 package com.ttmo.domain;
 
+import com.ttmo.domain.enumerate.ActionEnum;
+import com.ttmo.domain.enumerate.ResourceEnum;
 import lombok.Data;
 
 /**
@@ -16,7 +18,13 @@ public class Permission extends BaseEntity {
     private String name;
 
     /**
+     * 资源
+     */
+    private ResourceEnum resource;
+
+    /**
      * 动作
      */
-    private String action;
+    private ActionEnum action;
+
 }

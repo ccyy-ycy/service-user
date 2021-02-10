@@ -28,7 +28,17 @@ public class UserMainTest {
     private UserService userService;
 
     @Test
-    public void insertBatchUsers() {
+    public void batchInsertPermissionTest() {
+
+    }
+
+    @Test
+    public void batchInsertRoleTest() {
+
+    }
+
+    @Test
+    public void batchInsertUserTest() {
         LinkedList<User> list = new LinkedList<>();
         User user;
         for (int i = 0, size = 100; i < size; i++) {
