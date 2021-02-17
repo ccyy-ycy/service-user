@@ -23,8 +23,8 @@ import java.util.stream.LongStream;
  * @author yangqiaoxin
  * @date 2021/02/09
  */
-@SpringBootTest
-public class UserMainTest {
+@SpringBootTest(classes = UserMain.class)
+public class UserServiceTest {
 
     @Autowired
     private PermissionService permissionService;
