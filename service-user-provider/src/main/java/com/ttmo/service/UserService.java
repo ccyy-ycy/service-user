@@ -1,15 +1,20 @@
 package com.ttmo.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.ttmo.domain.User;
-import com.ttmo.mapper.UserMapper;
-import org.springframework.stereotype.Service;
+import com.ttmo.core.response.Result;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 /**
  * @author yangqiaoxin
- * @date 2021/02/09
+ * @date 2021/02/17
  */
-@Service
-public class UserService extends ServiceImpl<UserMapper, User> {
+public interface UserService {
+
+    void verifyUsernameIfExists(@Pattern(regexp = "^[a-zA-Z]{6,12}$") String username);
+
+    Result<Object> saveUser(@Pattern(regexp = "^[a-zA-Z]{6,12}$") String username,
+                            @NotBlank @Length(min = 8, max = 16) String password);
+
 }

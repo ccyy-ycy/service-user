@@ -1,10 +1,6 @@
 package com.ttmo.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.ttmo.core.exception.third.DatabaseServiceException;
 import com.ttmo.core.response.Result;
-import com.ttmo.domain.User;
-import com.ttmo.core.exception.client.UsernameExistsException;
 import com.ttmo.service.UserService;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,24 +28,10 @@ public class UserController {
             @NotBlank @Length(min = 8, max = 16) String password
     ) {
         // 检测用户名是否已被使用
-        QueryWrapper<User> wrapper = new QueryWrapper<User>().eq("username", username);
-        boolean isUsernameExists = userService.count(wrapper) != 0;
-        if (isUsernameExists) {
-            throw new UsernameExistsException();
-        }
+        userService.verifyUsernameIfExists(username);
 
         // 保存账户信息到数据库中
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(password);
-        boolean hasSaved = userService.save(user);
-        if (hasSaved) {
-            // 登录逻辑
-            /// ...............................
-            return Result.ok("注册成功");
-        }
-        // 保存失败
-        throw new DatabaseServiceException("注册失败, [username=" + username + ", password=" + password + "]");
+        return userService.saveUser(username, password);
     }
 
 }

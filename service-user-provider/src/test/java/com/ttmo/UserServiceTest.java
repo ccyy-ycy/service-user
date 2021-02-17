@@ -10,7 +10,7 @@ import com.ttmo.domain.enumerate.ActionEnum;
 import com.ttmo.domain.enumerate.ResourceEnum;
 import com.ttmo.service.PermissionService;
 import com.ttmo.service.RoleService;
-import com.ttmo.service.UserService;
+import com.ttmo.service.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,7 +33,7 @@ public class UserServiceTest {
     private RoleService roleService;
 
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @Test
     public void batchInsertPermissionTest() {

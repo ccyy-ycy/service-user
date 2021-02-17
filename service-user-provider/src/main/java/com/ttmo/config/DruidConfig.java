@@ -132,9 +132,9 @@ public class DruidConfig {
         initParams.put("loginUsername", "admin");
         // 登录监控信息显示页面的密码
         initParams.put("loginPassword", "admin");
-        // 允许访问控制（格式：域名、ip地址、ip地址/子网掩码位数）
-        initParams.put("allow", "localhost/24");
-        // 拒绝访问控制（格式：域名、ip地址、ip地址/子网掩码位数）
+        // 允许访问控制（格式：ip地址、ip地址/子网掩码位数）逗号分隔多个地址
+        initParams.put("allow", "127.0.0.1");
+        // 拒绝访问控制（格式：ip地址、ip地址/子网掩码位数）逗号分隔多个地址
 //        initParams.put("deny", "");
 
         bean.setInitParameters(initParams);
