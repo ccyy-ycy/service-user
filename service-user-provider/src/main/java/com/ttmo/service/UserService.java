@@ -1,10 +1,10 @@
 package com.ttmo.service;
 
 import com.ttmo.core.response.Result;
-import org.hibernate.validator.constraints.Length;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import com.ttmo.domain.User;
+import com.ttmo.validation.UserRegister;
+import com.ttmo.validation.UsernameAlreadyExist;
+import org.springframework.validation.annotation.Validated;
 
 /**
  * @author yangqiaoxin
@@ -12,9 +12,8 @@ import javax.validation.constraints.Pattern;
  */
 public interface UserService {
 
-    void verifyUsernameIfExists(@Pattern(regexp = "^[a-zA-Z]{6,12}$") String username);
+    void verifyUsernameIfExists(@Validated({UsernameAlreadyExist.class}) User user);
 
-    Result<Object> saveUser(@Pattern(regexp = "^[a-zA-Z]{6,12}$") String username,
-                            @NotBlank @Length(min = 8, max = 16) String password);
+    Result<Object> saveUser(@Validated({UserRegister.class}) User user);
 
 }
