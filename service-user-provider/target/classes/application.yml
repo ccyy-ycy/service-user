@@ -1,0 +1,32 @@
+server:
+  port: 80
+  servlet:
+    encoding:
+      enabled: true
+      force-request: true
+      force-response: true
+spring:
+  application:
+    name: service-user-provider
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/service_user?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    default-property-inclusion: non_empty
+    serialization:
+      fail_on_empty_beans: false
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: true
+      logic-not-delete-value: false
+  type-enums-package: com.ttmo.domain.enumerate
+logging:
+  level:
+    com.ttmo.**: debug
