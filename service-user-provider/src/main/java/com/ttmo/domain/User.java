@@ -1,8 +1,5 @@
 package com.ttmo.domain;
 
-import com.ttmo.validation.UserLogin;
-import com.ttmo.validation.UserRegister;
-import com.ttmo.validation.UsernameAlreadyExist;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -28,9 +25,9 @@ public class User extends BaseEntity {
     @Pattern(
             regexp = "^[a-zA-Z]{6,12}$",
             groups = {
-                    UserLogin.class,
-                    UserRegister.class,
-                    UsernameAlreadyExist.class
+                    Login.class,
+                    Register.class,
+                    UsernameExist.class
             }
     )
     private String username;
@@ -40,16 +37,16 @@ public class User extends BaseEntity {
      */
     @NotBlank(
             groups = {
-                    UserLogin.class,
-                    UserRegister.class
+                    Login.class,
+                    Register.class
             }
     )
     @Length(
             min = 8,
             max = 16,
             groups = {
-                    UserLogin.class,
-                    UserRegister.class
+                    Login.class,
+                    Register.class
             }
     )
     private String password;
@@ -63,5 +60,29 @@ public class User extends BaseEntity {
      * 邮箱
      */
     private String email;
+
+    /**
+     * 用户注册验证
+     * @author yangqiaoxin
+     * @date 2021/02/19
+     */
+    public interface Register {
+    }
+
+    /**
+     * 登录验证
+     * @author yangqiaoxin
+     * @date 2021/02/19
+     */
+    public interface Login {
+    }
+
+    /**
+     * 用户名已存在验证
+     * @author yangqiaoxin
+     * @date 2021/02/19
+     */
+    public interface UsernameExist {
+    }
 
 }

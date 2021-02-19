@@ -2,8 +2,6 @@ package com.ttmo.service;
 
 import com.ttmo.core.response.Result;
 import com.ttmo.domain.User;
-import com.ttmo.validation.UserRegister;
-import com.ttmo.validation.UsernameAlreadyExist;
 import org.springframework.validation.annotation.Validated;
 
 /**
@@ -12,8 +10,8 @@ import org.springframework.validation.annotation.Validated;
  */
 public interface UserService {
 
-    void verifyUsernameIfExists(@Validated({UsernameAlreadyExist.class}) User user);
+    void verifyUsernameIfExists(@Validated({User.UsernameExist.class}) User user);
 
-    Result<Object> saveUser(@Validated({UserRegister.class}) User user);
+    Result<Object> saveUser(@Validated({User.Register.class}) User user);
 
 }

@@ -3,7 +3,6 @@ package com.ttmo.controller;
 import com.ttmo.core.response.Result;
 import com.ttmo.domain.User;
 import com.ttmo.service.UserService;
-import com.ttmo.validation.UserRegister;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +21,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public Result<Object> register(@Validated({UserRegister.class}) User user) {
+    public Result<Object> register(@Validated({User.Register.class}) User user) {
         // 检测用户名是否已被使用
         userService.verifyUsernameIfExists(user);
 
